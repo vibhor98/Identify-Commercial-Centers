@@ -1,0 +1,8 @@
+conda>=4.7.12
+python>=3.6.8
+jupyter>=4.4.0
+matplotlib>=2.2.2
+numpy>=1.14.2
+overpy>=0.4
+pyshp>=2.1.0
+sklearn>=0.19.1
