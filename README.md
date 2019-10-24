@@ -34,7 +34,7 @@ All the commercial centers form the heart of the city and contain most of the am
 * Relation: A group of elements used to model logical or geographical relationships between objects.
 
 POI data of Jaipur contains `422 nodes` and `72 ways`. Below is the Scatterplot showing the nodes (POIs) of Jaipur plotted with longitude on x-axis and latitude on y-axis:
-[Image]
+![POI Data Scatterplot](https://github.com/vibhor98/Identify-Commercial-Centers/blob/master/Images/poi_data_scatterplot.png)
 
 The **densely clustered points (amenities)** denote the heart (posh commercial area) of the city while other far-away points indicate the small number of amenities in secluded, outskirts and underdeveloped areas of the Jaipur city.
 
@@ -47,25 +47,25 @@ For spatial clustering of points, we used both Density-Based Spatial Clustering 
 #### Clustering by DBSCAN algorithm
 DBSCAN clusters the data points to separate the area of high density (having large no. of amenities) with the area of low density and hence, separating out commercial areas from other areas of the city. DBSCAN is used because: it is robust to outliers, and does not require number of clusters to be specified priorly.
 
-[Image]
+![DBSCAN Clustering](https://github.com/vibhor98/Identify-Commercial-Centers/blob/master/Images/dbscan_clustering.png)
 From the scatterplot, we can observe that most of the points (amenities) are at the center surrounded by far-away points. So, the center area must be the posh main area of the city. Within this large cluster, there may be some small clusters as well. We'll zoom into the cluster to analyse it well in the further sections.
 
 #### Clustering by K-Means algorithm
 The points are clustered using K-Means algorithm by finding distance between them using their longitude and latitude values. 
 
-[Image]
+![K-Means Clustering](https://github.com/vibhor98/Identify-Commercial-Centers/blob/master/Images/k-means_clustering.png)
 Here, intententionally number of clusters is set high (=8) so that we can get smaller clusters within this center large cluster. So, as seen in the figure, the center cluster has 4 smaller clusters denoted by colors: yellow, parrot green, purple, and dark green.
 
 ### 4. Digging Deeper: Analysing sub-clusters within a center cluster
-[Image]
+![POI Data zoomed-in](https://github.com/vibhor98/Identify-Commercial-Centers/blob/master/Images/poi_data_zoomedin.png)
 This is a zoomed-in scatterplot of the large center cluster. We can clearly see some smaller clusters here. Let's cluster them using both DBSCAN and K-Means Clustering.
 
 #### Using DBSCAN
-[Image]
+![DBSCAN Clustering zoomed-in](https://github.com/vibhor98/Identify-Commercial-Centers/blob/master/Images/dbscan_clust_zoomedin.png)
 From the above scatterplot, we can intuitively say that purple cluster has the highest density. It means it has the highest number of amenities in Jaipur. So, it is one of the commercial centers of Jaipur. Additionally, other smaller clusters are separate commercial areas in the city providing fewer amenities to the population residing there.
 
 #### Using K-Means Clustering
-[Image]
+![K-Means Clustering zoomed-in](https://github.com/vibhor98/Identify-Commercial-Centers/blob/master/Images/kmeans_clust_zoomedin.png)
 The above plot demonstrates the K-means clustering on the POI points. Here, we can clearly see that there are many sub-clusters denoting separate commercial centers. Blue cluster is the largest among them.
 
 ## Running the project
